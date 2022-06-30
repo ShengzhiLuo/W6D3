@@ -1,0 +1,144 @@
+  [1m[35m (292.1ms)[0m  [1m[35mCREATE DATABASE "yyds_app_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (81.2ms)[0m  [1m[35mCREATE DATABASE "yyds_app_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/users" for ::1 at 2022-06-29 16:23:09 -0400
+Processing by UsersController#index as */*
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant UsersController::User:
+  app/controllers/users_controller.rb:4:in `index'
+
+Started GET "/users" for ::1 at 2022-06-29 16:24:54 -0400
+
+AbstractController::ActionNotFound - The action 'index' could not be found for UsersController:
+
+Started GET "/users" for ::1 at 2022-06-29 16:31:54 -0400
+
+AbstractController::ActionNotFound - The action 'index' could not be found for UsersController:
+
+Started GET "/users" for ::1 at 2022-06-29 16:34:10 -0400
+
+AbstractController::ActionNotFound - The action 'index' could not be found for UsersController:
+
+Started GET "/users" for ::1 at 2022-06-29 16:35:58 -0400
+Processing by UsersController#index as */*
+No template found for UsersController#index, rendering head :no_content
+Completed 204 No Content in 224ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2022-06-29 16:36:11 -0400
+Processing by UsersController#index as */*
+No template found for UsersController#index, rendering head :no_content
+Completed 204 No Content in 175ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2022-06-29 16:38:14 -0400
+Processing by UsersController#index as */*
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users?fav_food=pizza" for ::1 at 2022-06-29 16:42:03 -0400
+Processing by UsersController#index as */*
+  Parameters: {"fav_food"=>"pizza"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2022-06-29 16:47:20 -0400
+
+AbstractController::ActionNotFound - The action 'create' could not be found for UsersController:
+
+Started POST "/users" for ::1 at 2022-06-29 16:48:10 -0400
+
+AbstractController::ActionNotFound - The action 'create' could not be found for UsersController:
+
+Started POST "/users" for ::1 at 2022-06-29 16:49:17 -0400
+Processing by UsersController#create as */*
+  Parameters: {"fav_food"=>"pizza"}
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 123ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2022-06-29 16:49:42 -0400
+Processing by UsersController#create as */*
+  Parameters: {"fav_food"=>"pizza"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2022-06-29 16:51:01 -0400
+Processing by UsersController#create as */*
+  Parameters: {"fav_food"=>"pizza"}
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/2" for ::1 at 2022-06-29 16:55:42 -0400
+
+AbstractController::ActionNotFound - The action 'show' could not be found for UsersController:
+
+Started GET "/users/2" for ::1 at 2022-06-29 16:56:34 -0400
+Processing by UsersController#show as */*
+  Parameters: {"fav_food"=>"pizza", "id"=>"2"}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/2" for ::1 at 2022-06-29 16:56:45 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (47.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2660318555160200340)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20220629211518)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL)[0m
+  ↳ db/migrate/20220629211518_create_users.rb:3
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_name" ON "users"  ("name")[0m
+  ↳ db/migrate/20220629211518_create_users.rb:7
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20220629211518_create_users.rb:8
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220629211518"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-06-29 21:18:30.347574"], ["updated_at", "2022-06-29 21:18:30.347574"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2660318555160200340)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2660318555160200340)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2660318555160200340)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
